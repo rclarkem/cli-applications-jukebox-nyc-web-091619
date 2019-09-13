@@ -13,17 +13,13 @@ end
 end
 
 def list(songslist)
-songslist.length.times {|n| puts "#{n + 1}. #{songslist[n]}"}
+  songslist.length.times {|n| puts "#{n + 1}. #{songslist[n]}"}
 end
 
-def list(songslist)
-songslist.length.times {|n| puts "#{n + 1}. #{songslist[n]}"}
-end
 
 def play(songsarr)
   puts "Please enter a song name or number:"
   user_input = gets.strip
-  # binding.pry
   if songsarr.index(user_input.to_s)
     puts "Playing #{user_input}"
   elsif user_input.to_i - 1 >= 0 && songsarr[user_input.to_i - 1]
@@ -46,31 +42,26 @@ end
 
 
 def run(arraylist)
-prompt_user
-user_input = gets.strip
-loop do
+  prompt_user
+  user_input = gets.strip
 
-if user_input == 'exit'
-exit_jukebox
-break
+  loop do
 
-
-elsif user_input == 'help'
-help
-prompt_user
-user_input = gets.strip
-
-elsif user_input == 'play'
-play(arraylist)
-prompt_user
-user_input = gets.strip
-# end
-elsif user_input == 'list'
-list(arraylist)
-prompt_user
-user_input = gets.strip
+  if user_input == 'exit'
+    exit_jukebox
+    break
+  elsif user_input == 'help'
+    help
+    prompt_user
+    user_input = gets.strip
+  elsif user_input == 'play'
+    play(arraylist)
+    prompt_user
+    user_input = gets.strip
+  elsif user_input == 'list'
+    list(arraylist)
+    prompt_user
+    user_input = gets.strip
+  end
 end
-
-end
-
 end
