@@ -1,16 +1,16 @@
-require "pry"
 def help
-  command_hash = {
-	"help" => "displays this help message",
-	"list" => "displays a list of songs you can play",
-	"play" => "lets you choose a song to play",
-	"exit" => "exits this program"
-}
-puts "I accept the following commands:"
-command_hash.each do |commands, values|
-  puts "- #{commands} : #{values}"
-end
-end
+    command_hash = {
+	     "help" => "displays this help message",
+	      "list" => "displays a list of songs you can play",
+	       "play" => "lets you choose a song to play",
+	        "exit" => "exits this program"
+        }
+        puts "I accept the following commands:"
+        command_hash.each do |commands, values|
+          puts "- #{commands} : #{values}"
+        end
+      end
+
 
 def list(songslist)
   songslist.length.times {|n| puts "#{n + 1}. #{songslist[n]}"}
@@ -33,7 +33,6 @@ end
 def exit_jukebox
   puts "Goodbye"
 end
-
 
 def run(arraylist)
   loop do
